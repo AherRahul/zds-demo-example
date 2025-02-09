@@ -75,7 +75,7 @@ export default {
       event.target.style.transform = 'scale(1)';
     },
     goToDisplay(){
-      this.$router.push('/display');
+      // this.$router.push('/display');
     }
   }
 };
