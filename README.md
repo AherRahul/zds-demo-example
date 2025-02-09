@@ -1,167 +1,84 @@
 <p align="center">
- <a href="https://rahulaher.netlify.app">
-  <img src="https://rahulaher.netlify.app/img/logo/glyph-black-colored.svg" alt="Take care soon" width="250" />
+ <a href="https://www.zema.global/">
+  <img src="https://res.cloudinary.com/duojkrgue/image/upload/v1737614196/zema-design-system/Zema_logo_qnkj5n.svg" alt="Zema Global" width="250" />
  </a>
 </p>
 
 
-# ZDS Design System Example Project
+<div align="center">
 
-Welcome to the example project showcasing how to integrate and use the ZDS (Zema's Design System) in your Vue.js projects. This guide will walk you through the steps to get started with ZDS, from installation to usage, ensuring a smooth integration process.
+ <p align="center">
+	 
+# ZEMA Design System (ZDS)  
 
-## Introduction to ZDS
+**ZDS** is an open-source tool for building UI design with Vue.js. It provides you and your team with a well-organized set of tools, patterns, and best practices to serve as a strong foundation for application development.  
+</p>
+</div>
 
-ZDS is a powerful and flexible design system built with Vue.js, aimed at providing a consistent and efficient way to develop user interfaces. With a collection of reusable components and styles, ZDS helps streamline your development process, ensuring your applications have a cohesive look and feel.
+## Key Features  
+- Built with **Vue.js** for robust component-based development.  
+- Streamlines the design-to-development process by offering reusable components and patterns.  
+- Ideal for designers and front-end developers familiar with component-based workflows, **HTML**, **SCSS**, and **JavaScript**.  
 
-## The Journey of ZDS
+ **Made by Zema team. See also [the official website](https://zema-design-system.netlify.app/) of ZDS Design System**
+ 
 
-### How It All Started
+## Features
 
-The idea for ZDS came from my own experience as a frontend developer. I found myself repeatedly creating similar components and styles for different projects. This repetitive work not only consumed a lot of time but also made it challenging to maintain consistency across various applications. I realized the need for a centralized design system that could be reused across projects to ensure a uniform user experience.
+- A set of interconnected patterns & practices for you and your team.
+- A well thought-out terminology, naming conventions, and hierarchy.
+- Get an automated overview of how your design system progresses over time.
+- Automatic generation of living, user editable documentation.
+- Easily export and use your design as an NPM dependency in another Vue.js or Nuxt.js project.
+- Create a token, an element, or a pattern, and it’s immediately available across all components.
+- Pre-configured Prettier setup for auto-formatting code on both save and before commit.
+- Live Reloading, Autoprefixing, SCSS, and helper functions + simple and sane defaults for SVG and Webfont usage out-of-the-box.
+- Documentation and the app logic are separated, so you can have public docs while the app itself stays private.
+- [And more…](https://zema-design-system.netlify.app/)
+ 
+## Documentation
 
-### The Problem It Solves
+- [Getting Started](https://zema-design-system.netlify.app//?path=/docs/foundation-principles--page): How to install and run Vue Design System.
+- [Colors](https://zema-design-system.netlify.app//?path=/docs/foundation-cores--color-palete): Colors are important for identifying our product, in addition to helping to create consistent experiences across our solutions.
+- [Typography](https://zema-design-system.netlify.app//?path=/docs/foundation-typography--tokens): ZDS's default typography is Open+Sans. We use the Open+Sans variable with OpenType resources.
+- [Font Weight](https://zema-design-system.netlify.app//?path=/docs/foundation-font-weight--font-weight): Font weight is a typographic token that can be used to change the default value of the typographic scale weight and add emphasis to certain text or phrase.
+- [Spacing](https://zema-design-system.netlify.app/?path=/docs/foundation-spacing--escala): Spacing tokens are an essential part of building interfaces using ZDS. 
 
-1. **Consistency**: One of the primary challenges in frontend development is maintaining consistency in UI elements across different parts of an application or across multiple projects. ZDS addresses this by providing a standardized set of components that can be reused, ensuring a cohesive look and feel.
-2. **Efficiency**: Rewriting similar components for different projects is time-consuming. ZDS saves developers time by offering pre-built, customizable components, allowing them to focus more on the unique aspects of their projects rather than reinventing the wheel.
-3. **Scalability**: As projects grow, maintaining and updating individual components can become cumbersome. With ZDS, updates and improvements can be made in a single place and propagated across all projects that use the design system, making it easier to scale and maintain applications.
-4. **Collaboration**: In teams, having a shared design system fosters better collaboration between developers and designers. ZDS provides a common language and set of tools that everyone can use, reducing misunderstandings and increasing productivity.
+etc.
 
-## Prerequisites
 
-Before you begin, make sure you have the following installed:
+## Examples
 
-- Node.js (v12 or higher)
-- npm (v6 or higher) or Yarn (v1.22 or higher)
-- Vue.js (v2.x or v3.x)
+- [Official Documentation](https://zema-design-system.netlify.app)
 
-## NPM Package
 
-[@aherrahul/design-system](https://www.npmjs.com/package/@aherrahul/design-system)
+## Installation
 
-## Getting Started
-
-### Step 1: Install ZDS
-
-To use ZDS in your Vue.js project, you first need to install it via npm. Open your terminal and run the following command:
+Add this package to your project:
 
 ```bash
-npm install @aherrahul/zema-design-system
+npm i @aherrahul/zema-design-system;
 ```
 
-Alternatively, if you prefer using Yarn, you can run:
+Import the `style.css` for general styling like fonts, etc. in the root file of your application or in you root styling file.
 
-```bash
-yarn add @aherrahul/design-system
+```js
+import '@aherrahul/zema-design-system/dist/style.css';
 ```
 
-### Step 2: Import ZDS in Your Project
 
-Once the installation is complete, you need to import ZDS into your Vue.js project. This can be done in your main JavaScript file (usually main.js or main.ts).
+- To use ZDS, import the library into your entry point, it will probably be your main.js or app.js:
 
-For Vue 2:
+```js
+import ZDS from "@aherrahul/zema-design-system";
+```
 
-```javascript
-import Vue from 'vue';
-import App from './App.vue';
-import ZDS from '@aherrahul/design-system';
-import '@aherrahul/design-system/dist/style.css';
-
+- And install ZDS:
+```js
 Vue.use(ZDS);
-
-new Vue({
-  render: h => h(App),
-}).$mount('#app');
 ```
 
-For Vue 3:
 
-```javascript
-import { createApp } from 'vue';
-import App from './App.vue';
-import ZDS from '@aherrahul/design-system';
-import '@aherrahul/design-system/dist/style.css';
+## Authors
 
-const app = createApp(App);
-app.use(ZDS);
-app.mount('#app');
-```
-
-### Step 3: Using ZDS Components
-
-Now that ZDS is installed and configured, you can start using its components in your Vue.js project. Here's an example of how to use a button component from ZDS:
-
-```vue
-<template>
-  <div id="app">
-    <zds-button
-      variant="blue"
-      size="md"
-      text="Lorem Ipsum"
-      @click="handleClick"
-    />
-  </div>
-</template>
-
-<script setup>
-const handleClick = () => {
-  alert('Button clicked!');
-};
-</script>
-
-<style>
-/* Add any custom styles here */
-</style>
-```
-
-### Step 4: Customizing ZDS Components
-
-ZDS components are designed to be easily customizable. You can pass props to the components to change their appearance and behavior. For example, to customize the button component:
-
-```vue
-<template>
-  <div id="app">
-    <zds-button
-      :variant="btnColor"
-      :size="btnSize"
-      :text="btnText"
-      @click="handleClick"
-    />
-  </div>
-</template>
-
-<script setup>
-import { ref } from 'vue';
-
-const btnColor = ref('red');
-const btnSize = ref('md');
-const btnText = ref('Button');
-
-const handleClick = () => {
-  alert('Button Alert');
-};
-</script>
-
-<style>
-/* Add any custom styles here */
-</style>
-```
-
-### Step 5: Exploring More Components
-
-ZDS comes with a wide range of components that you can use to build your application. Check out the [official documentation](https://zds-design-system.netlify.app/) for a complete list of available components and their usage examples.
-
-## Documentation: Your Ultimate Guide
-
-The ZDS documentation is created using Storybook, providing a comprehensive and interactive way to explore and understand the design system. Here are some of the benefits of the documentation:
-
-1. **Interactive Demos**: Each component is documented with interactive demos, allowing you to see the component in action and play around with its properties.
-2. **Usage Examples**: Detailed usage examples show how to integrate and use each component in your project, making it easy to get started.
-3. **Customization Options**: The documentation includes information on the various customization options available for each component, helping you tailor them to fit your specific needs.
-4. **API Reference**: A thorough API reference is provided for each component, including details on all available props, events, and slots.
-5. **Design Guidelines**: The documentation also covers design guidelines and best practices for using the components, ensuring your application maintains a consistent and professional look.
-
-## Conclusion
-
-Integrating ZDS into your Vue.js project is a straightforward process that can greatly enhance your development workflow. With its reusable components and consistent design language, ZDS helps you build polished and professional applications efficiently. [Demo project/Starter-pack](https://github.com/AherRahul/ZDS-design-system-example)
-
-We hope this guide helps you get started with ZDS. If you have any questions or feedback, feel free to leave a comment below or reach out to us on [GitHub](https://github.com/AherRahul/design-system).
+[ZEMA](https://www.zema.global/).
