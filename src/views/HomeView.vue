@@ -46,7 +46,7 @@ export default {
         },
         {
           "title": "Usable",
-          "description": "Designing for usability means adopting a user-first approach driven by empathy. Through meticulous research and thoughtful data analysis, we craft intuitive solutions that address genuine user problems with clarity and care. Delivering a consistent and optimized user experience across."
+          "description": "Designing for usability means adopting a user-first approach driven by empathy. Through meticulous research and thoughtful data analysis, we craft intuitive solutions that address genuine user problems with clarity & care. Delivering a consistent & optimized user experience across."
         },
         {
           "title": "Inclusive",
@@ -58,7 +58,7 @@ export default {
         },
         {
           "title": "Autonomy through Empowerment",
-          "description": "We believe in empowering teams with the freedom to innovate and the confidence to design impactful solutions. By fostering a culture of trust and passion, we enable creators to deliver exceptional user experiences."
+          "description": "We believe in empowering teams with the freedom to innovate and the confidence to design impactful solutions. By fostering a culture of trust & passion, we enable creators to deliver exceptional user experiences."
         },
         {
           "title": "ZDS Mission",
