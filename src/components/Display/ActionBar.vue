@@ -1,38 +1,40 @@
 <template>
-    <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col cols="2" offset="0" colsAtS="12" colsAtM="12" colsAtL="2" colsAtXl="2">
-                    <zds-button
-                        variant="blue"
-                        size="sm"
-                        text="Open"
-                        @click="showActionBar = !showActionBar"
-                    />
-                </zds-col>
-                <zds-col  cols="10" offset="0" colsAtS="12" colsAtM="12" colsAtL="10" colsAtXl="10">
-                    <zds-action-bar
-                        class="pt-1"
-                        v-bind="args"
-                        :show="showActionBar"
-                        :dismissible="dismissible"
-                        :float="float"
-                        :light="light"
-                        @click="logAction"
-                        @close="logClose"
-                    >
-                        <template #description>
-                            8 selected items
-                        </template>
-                    </zds-action-bar>
-                </zds-col>
-            </zds-row>
+    <div class="action-bar-container">
+        <zds-grid 
+            cols="minmax(120px, 200px) 1fr"
+            gap="20px"
+            justify="start"
+            align="center"
+        >
+            <zds-grid-item>
+                <zds-button
+                    variant="blue"
+                    size="sm"
+                    text="Open"
+                    @click="showActionBar = !showActionBar"
+                />
+            </zds-grid-item>
+            <zds-grid-item>
+                <zds-action-bar
+                    v-bind="args"
+                    :show="showActionBar"
+                    :dismissible="dismissible"
+                    :float="float"
+                    :light="light"
+                    @click="logAction"
+                    @close="logClose"
+                >
+                    <template #description>
+                        8 selected items
+                    </template>
+                </zds-action-bar>
+            </zds-grid-item>
         </zds-grid>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
+<script>
+export default {
     name: 'ActionBar',
     props: {
         light: {
@@ -61,21 +63,28 @@
             }
         }
     },
-    mounted () {},
     methods: {
         logAction() {
             console.log("logAction called");
         },
-
         logClose() {
             console.log("logClose called");
             this.showActionBar = false;
         }
     },
-  }
-  </script>
+}
+</script>
   
-  <style>
-  
-  </style>
+<style scoped>
+.action-bar-container {
+    width: 100%;
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    .action-bar-container {
+        padding: 8px;
+    }
+}
+</style>
   

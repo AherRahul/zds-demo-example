@@ -816,7 +816,7 @@
     border-radius: 15px;
   }
     
-  .dashboard-content .grid-item {
+  .dashboard-content .grid-background {
     background-color: #ffffff;
     border: 1px solid #e1e1e1;
     padding: 12px 20px 12px 20px;

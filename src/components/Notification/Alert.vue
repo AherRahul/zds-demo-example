@@ -1,16 +1,14 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="10" offset="0" colsAtS="12" colsAtM="12" colsAtL="10" colsAtXl="10">
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item cols="12">
                     <zds-alert
                         :variant="variant"
                         :text="text"
                         :dismissible="dismissible"
                         @close="closeAlert"
                     />
-                </zds-col>
-            </zds-row>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

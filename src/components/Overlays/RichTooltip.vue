@@ -1,31 +1,29 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <div>
-                        <span
-                            :id="targetId"
-                            @mouseover="showPopover = true"
-                            @mouseleave="showPopover = false"
-                        >
-                            Tooltip trigger
-                        </span>
-                        <zds-rich-tooltip
-                            v-model="showPopover"
-                            :targetId="targetId"
-                            :fitContentWidth="fitContentWidth"
-                            :width="width"
-                        >
-                            <div>
-                                <p><strong>In attendance:</strong> 280</p>
-                                <p><strong>Pending:</strong> 60</p>
-                                <p><strong>In monitoring:</strong> 600</p>
-                            </div>
-                        </zds-rich-tooltip>
-                    </div>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <div>
+                    <span
+                        :id="targetId"
+                        @mouseover="showPopover = true"
+                        @mouseleave="showPopover = false"
+                    >
+                        Tooltip trigger
+                    </span>
+                    <zds-rich-tooltip
+                        v-model="showPopover"
+                        :targetId="targetId"
+                        :fitContentWidth="fitContentWidth"
+                        :width="width"
+                    >
+                        <div>
+                            <p><strong>In attendance:</strong> 280</p>
+                            <p><strong>Pending:</strong> 60</p>
+                            <p><strong>In monitoring:</strong> 600</p>
+                        </div>
+                    </zds-rich-tooltip>
+                </div>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

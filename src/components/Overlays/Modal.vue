@@ -1,31 +1,29 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <div class="d-flex justify-content-center">
-                        <zds-button
-                            id="trigger-popover"
-                            @click="showModal = true"
-                        >
-                            Open "{{ size }}" Modal
-                        </zds-button>
-                        <zds-modal
-                            v-model="showModal"
-                            :title="title"
-                            :size="size"
-                            @close="showModal = false"
-                            @ok="showModal = false"
-                        >
-                            <span>
-                                Mussum Ipsum, cacilds vidis liter abertis. The order of the tractors does not change the hard bread. It's depressed,
-                                I know a cachacis that can brighten your life.Paisis, filhis, espiritis santis.Leite de capivaris,
-                                headless manquis mule milk.
-                            </span>
-                        </zds-modal>
-                    </div>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>     
+				<div class="d-flex justify-content-center">
+					<zds-button
+						id="trigger-popover"
+						@click="showModal = true"
+					>
+						Open "{{ size }}" Modal
+					</zds-button>
+					<zds-modal
+						v-model="showModal"
+						:title="title"
+						:size="size"
+						@close="showModal = false"
+						@ok="showModal = false"
+					>
+						<span>
+							Mussum Ipsum, cacilds vidis liter abertis. The order of the tractors does not change the hard bread. It's depressed,
+							I know a cachacis that can brighten your life.Paisis, filhis, espiritis santis.Leite de capivaris,
+							headless manquis mule milk.
+						</span>
+					</zds-modal>
+				</div>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

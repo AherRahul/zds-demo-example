@@ -1,31 +1,29 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-collapsible-container
-                        :modelValue="modelValue"
-                        :title="title"
-                    >
-                        <p>
-                            Mussum Ipsum, cacilds vidis litro abertis. Todo mundo
-                            vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
-                            Atirei o pau no gatis, per gatis num morreus. Pra lá , depois
-                            divoltis porris, paradis. Leite de capivaris, leite de mula
-                            manquis sem cabeça. Viva Forevis aptent taciti sociosqu ad
-                            litora torquent. Per aumento de cachacis, eu reclamis. Nec
-                            orci ornare consequat. Praesent lacinia ultrices consectetur.
-                            Sed non ipsum felis. Cevadis im ampola pa arma uma pindureta.
-                        </p>
-                    </zds-collapsible-container>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-collapsible-container
+                    :modelValue="modelValue"
+                    :title="title"
+                >
+                    <p>
+                        Mussum Ipsum, cacilds vidis litro abertis. Todo mundo
+                        vê os porris que eu tomo, mas ninguém vê os tombis que eu levo!
+                        Atirei o pau no gatis, per gatis num morreus. Pra lá , depois
+                        divoltis porris, paradis. Leite de capivaris, leite de mula
+                        manquis sem cabeça. Viva Forevis aptent taciti sociosqu ad
+                        litora torquent. Per aumento de cachacis, eu reclamis. Nec
+                        orci ornare consequat. Praesent lacinia ultrices consectetur.
+                        Sed non ipsum felis. Cevadis im ampola pa arma uma pindureta.
+                    </p>
+                </zds-collapsible-container>
+            </zds-grid-item>
         </zds-grid>
     </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+export default {
     name: 'CollapsibleContainer',
     props: {
         /**
@@ -52,10 +50,10 @@
     mounted () {
     },
     methods: {},
-  }
-  </script>
-  
-  <style>
-  
-  </style>
+}
+</script>
+
+<style>
+
+</style>
   

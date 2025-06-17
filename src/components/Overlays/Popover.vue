@@ -1,38 +1,36 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <div class="d-flex justify-content-center">
-                        <zds-button
-                            :id="targetId"
-                            @click="showPopover = !showPopover"
-                        >
-                            Click
-                        </zds-button>
-                        <zds-popover
-                            :width="width"
-                            :fitContentWidth="fitContentWidth"
-                            :height="height"
-                            :targetId="targetId"
-                            :rightAligned="rightAligned"
-                            :verticalFluid="verticalFluid"
-                            v-model="showPopover"
-                        >
-                            <span>
-                                Mussum Ipsum, cacilds vidis liter abertis. The order of the tractors does not change the hard bread. It's depressed,
-                                I know a cachacis that can brighten your life.Paisis, filhis, espiritis santis.Leite de capivaris,
-                                headless manquis mule milk.
-                            </span>
-                            <span>
-                                Mussum Ipsum, cacilds vidis liter abertis. The order of the tractors does not change the hard bread. It's depressed,
-                                I know a cachacis that can brighten your life.Paisis, filhis, espiritis santis.Leite de capivaris,
-                                headless manquis mule milk.
-                            </span>
-                        </zds-popover>
-                    </div>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <div class="d-flex justify-content-center">
+                    <zds-button
+                        :id="targetId"
+                        @click="showPopover = !showPopover"
+                    >
+                        Click
+                    </zds-button>
+                    <zds-popover
+                        :width="width"
+                        :fitContentWidth="fitContentWidth"
+                        :height="height"
+                        :targetId="targetId"
+                        :rightAligned="rightAligned"
+                        :verticalFluid="verticalFluid"
+                        v-model="showPopover"
+                    >
+                        <span>
+                            Mussum Ipsum, cacilds vidis liter abertis. The order of the tractors does not change the hard bread. It's depressed,
+                            I know a cachacis that can brighten your life.Paisis, filhis, espiritis santis.Leite de capivaris,
+                            headless manquis mule milk.
+                        </span>
+                        <span>
+                            Mussum Ipsum, cacilds vidis liter abertis. The order of the tractors does not change the hard bread. It's depressed,
+                            I know a cachacis that can brighten your life.Paisis, filhis, espiritis santis.Leite de capivaris,
+                            headless manquis mule milk.
+                        </span>
+                    </zds-popover>
+                </div>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

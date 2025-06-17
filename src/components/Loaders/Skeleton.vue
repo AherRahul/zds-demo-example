@@ -1,16 +1,14 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-skeleton
-						:width="width"
-                        :height="height"
-                        :fluid="fluid"
-                        :shape="shape"
-					/>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-skeleton
+                    :width="width"
+                    :height="height"
+                    :variant="variant"
+                    :rounded="rounded"
+                />
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>
@@ -50,6 +48,23 @@
 			type: String,
 			default: 'square',
 			validate: (value) => ['circle', 'square'].includes(value),
+		},
+
+		/**
+		 * Indicates the variant of the skeleton. There are two options: default, inverted
+		 */
+		variant: {
+			type: String,
+			default: 'default',
+			validate: (value) => ['default', 'inverted'].includes(value),
+		},
+
+		/**
+		 * Indicates whether the skeleton is rounded. There are two options: true, false
+		 */
+		rounded: {
+			type: Boolean,
+			default: false,
 		}
     },
     data() {

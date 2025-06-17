@@ -1,17 +1,15 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="10" offset="0" colsAtS="12" colsAtM="12" colsAtL="10" colsAtXl="10">
-                    <div :id="targetId">Pulsar target</div>
-                    <zds-pulsar
-                        :variant='variant'
-                        :position='position'
-                        :targetId="targetId"
-                    >
-                    </zds-pulsar>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <div :id="targetId">Pulsar target</div>
+                <zds-pulsar
+                    :variant='variant'
+                    :position='position'
+                    :targetId="targetId"
+                >
+                </zds-pulsar>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

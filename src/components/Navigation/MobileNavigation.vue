@@ -1,11 +1,10 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <div style="position: relative; overflow: auto; height: 930px;
-					width: 430px; border: 1px solid #CCC; margin: auto;
-					border-radius: 20px; cursor: pointer">
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <div style="position: relative; overflow: auto; height: 930px;
+                    width: 430px; border: 1px solid #CCC; margin: auto;
+                    border-radius: 20px; cursor: pointer">
                         <zds-mobile-navigation
                             variant='indigo'
                             :light=true
@@ -18,8 +17,7 @@
                             @logout="logLogout"
                         />
                     </div>
-                </zds-col>
-            </zds-row>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

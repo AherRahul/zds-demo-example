@@ -1,51 +1,54 @@
 <template>
-    <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="10" offset="0" colsAtS="12" colsAtM="12" colsAtL="10" colsAtXl="10">
-                    <zds-dropdown-button
-                        :items="items"
-                        :variant="variant"
-                        :secondary="secondary"
-                        :text="text"
-                        :dropdownWidth="dropdownWidth"
-                        @action-click="logActionClick"
-                        @button-click="logClick"
-                    />
-                </zds-col>
-            </zds-row>
+    <div class="dropdown-buttons-container">
+        <zds-grid 
+            cols="minmax(auto, 1200px)"
+            gap="20px"
+            justify="start"
+            align="center"
+        >
+            <zds-grid-item>
+                <zds-dropdown-button
+                    :items="items"
+                    :variant="variant"
+                    :secondary="secondary"
+                    :text="text"
+                    :dropdownWidth="dropdownWidth"
+                    @action-click="logActionClick"
+                    @button-click="logClick"
+                />
+            </zds-grid-item>
         </zds-grid>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
+<script>
+export default {
     name: 'DropdownButtons',
     props: {
-		/**
-		* The DropdownButton variant. There are 9 variants: 'turquoise', 'green', 'blue',
-		* 'violet', 'pink', 'red', 'orange', 'amber' and 'gray'.
-		*/
-		variant: {
-			type: String,
-			default: 'gray',
-		},
-		/**
-		* Specifies whether the DropdownButton version is the secondary one. This property has
-		* higher prevalence than the `variant` prop.
-		*/
-		secondary: {
-			type: Boolean,
-			default: false,
-		},
-		/**
-		* Controls the size of the Dropdown popover (in pixels).
-		* The size is never smaller than the width of the button.
-		*/
-		dropdownWidth: {
-			type: Number,
-			default: 0,
-		},
+        /**
+        * The DropdownButton variant. There are 9 variants: 'turquoise', 'green', 'blue',
+        * 'violet', 'pink', 'red', 'orange', 'amber' and 'gray'.
+        */
+        variant: {
+            type: String,
+            default: 'gray',
+        },
+        /**
+        * Specifies whether the DropdownButton version is the secondary one. This property has
+        * higher prevalence than the `variant` prop.
+        */
+        secondary: {
+            type: Boolean,
+            default: false,
+        },
+        /**
+        * Controls the size of the Dropdown popover (in pixels).
+        * The size is never smaller than the width of the button.
+        */
+        dropdownWidth: {
+            type: Number,
+            default: 0,
+        },
     },
     data() {
         return {
@@ -67,12 +70,27 @@
             text: 'Finalize request'
         }
     },
-    mounted () {},
-    methods: {},
-  }
-  </script>
+    methods: {
+        logActionClick(item) {
+            console.log('Action clicked:', item);
+        },
+        logClick() {
+            console.log('Button clicked');
+        }
+    }
+}
+</script>
   
-  <style>
-  
-  </style>
+<style scoped>
+.dropdown-buttons-container {
+    width: 100%;
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    .dropdown-buttons-container {
+        padding: 8px;
+    }
+}
+</style>
   

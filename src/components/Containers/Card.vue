@@ -1,32 +1,22 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-card
-                        :title="title"
-                        :content="content"
-                        :imageWidth="imageWidth"
-                        :imageHeight="imageHeight"
-                        :imageSrc="imageSrc"
-                        :clickable="clickable"
-                        :horizontal="horizontal"
-                        @cardClick="logClick"
-                    >
-                        <template #footer>
-                            <zds-button size="md" style="margin-top: 16px">
-                                Action 1
-                            </zds-button>
-                        </template>
-                    </zds-card>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-card
+                    :variant="variant"
+                    :elevation="elevation"
+                    :rounded="rounded"
+                    :fluid="fluid"
+                >
+                    <slot></slot>
+                </zds-card>
+            </zds-grid-item>
         </zds-grid>
     </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+export default {
     name: 'Card',
     props: {
         /**
@@ -92,6 +82,34 @@
 			type: Boolean,
 			default: false,
 		},
+        /**
+        * Variant of the card
+        */
+        variant: {
+            type: String,
+            default: '',
+        },
+        /**
+        * Elevation of the card
+        */
+        elevation: {
+            type: String,
+            default: '',
+        },
+        /**
+        * Rounded of the card
+        */
+        rounded: {
+            type: Boolean,
+            default: false,
+        },
+        /**
+        * Fluid of the card
+        */
+        fluid: {
+            type: Boolean,
+            default: false,
+        },
     },
     data() {
         return {}
@@ -102,10 +120,10 @@
 			console.info('logClick: ', event);
 		}
     },
-  }
-  </script>
+}
+</script>
+
+<style>
   
-  <style>
-  
-  </style>
+</style>
   

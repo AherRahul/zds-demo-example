@@ -1,45 +1,14 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <div style="background-color: #F8F9FA; padding: 16px; border-radius: 4px;">
-                        <zds-inner-tabs
-                            :tabs="tabs"
-                            :activeTab="activeTab"
-                            :variant="variant"
-                        >
-                            <template #overview>
-                                Overview
-                            </template>
-                            <template #indicator-1>
-                                Contents of tab-1
-                            </template>
-                            <template #indicator-2>
-                                Contents of tab-2
-                            </template>
-                            <template #indicator-3>
-                                Tab-3 content
-                            </template>
-                            <template #indicator-4>
-                                Contents of tab-4
-                            </template>
-                            <template #indicator-5>
-                                Contents of tab-5
-                            </template>
-                            <template #indicator-6>
-                                Contents of tab-6
-                            </template>
-                            <template #indicator-7>
-                                Contents of tab-7
-                            </template>
-                            <template #indicator-8>
-                                Contents of tab-8
-                            </template>
-                        </zds-inner-tabs>
-                    </div>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-inner-tabs
+                    :tabs="tabs"
+                    :activeTab="activeTab"
+                    :variant="variant"
+                    @tab-change="handleTabChange"
+                />
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>
@@ -82,7 +51,11 @@
         }
     },
     mounted () {},
-    methods: {},
+    methods: {
+        handleTabChange(tab) {
+            // Handle tab change logic here
+        }
+    },
   }
   </script>
   

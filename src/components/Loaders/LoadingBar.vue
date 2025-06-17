@@ -1,11 +1,13 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-loading-bar />
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-loading-bar
+                    :progress="progress"
+                    :variant="variant"
+                    :height="height"
+                />
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

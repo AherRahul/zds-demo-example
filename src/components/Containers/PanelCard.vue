@@ -1,8 +1,8 @@
 <template>
-    <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
+    <div class="panel-card">
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <div class="panel-content">
                     <zds-panel-card
                         title="Networks"
                         subtitle="Enable regulatory networks"
@@ -17,14 +17,14 @@
                         divoltis porris, paradis. Capybara milk, mule milk
                         headless manquis.
                     </zds-panel-card>
-                </zds-col>
-            </zds-row>
+                </div>
+            </zds-grid-item>
         </zds-grid>
     </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+export default {
     name: 'PanelCard',
     props: {
         /**
@@ -56,10 +56,9 @@
     },
     mounted () {},
     methods: {},
-  }
-  </script>
-  
-  <style>
-  
-  </style>
-  
+}
+</script>
+
+<style>
+
+</style>

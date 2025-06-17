@@ -1,28 +1,29 @@
 <template>
-    <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col cols="10" offset="0" colsAtS="12" colsAtM="12" colsAtL="10" colsAtXl="10">
-                    <zds-actions-list
-                        :actions="actions"
-                        :numberOfExpandedActions="numberOfExpandedActions"
-                        @expanded="expandedActionList"
-                        @action-clicked="actionClickedActionList"
-                    >
-                        <template
-                            #action="{ list }"
-                        >
-                            {{ list.title }}
-                        </template>
-                    </zds-actions-list>
-                </zds-col>
-            </zds-row>
+    <div class="actions-list-container">
+        <zds-grid 
+            cols="minmax(auto, 1200px)"
+            gap="20px"
+            justify="start"
+            align="center"
+        >
+            <zds-grid-item>
+                <zds-actions-list
+                    :actions="actions"
+                    :numberOfExpandedActions="numberOfExpandedActions"
+                    @expanded="expandedActionList"
+                    @action-clicked="actionClickedActionList"
+                >
+                    <template #action="{ list }">
+                        {{ list.title }}
+                    </template>
+                </zds-actions-list>
+            </zds-grid-item>
         </zds-grid>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
+<script>
+export default {
     name: 'ActionList',
     props: {
         numberOfExpandedActions: {
@@ -54,15 +55,23 @@
         expandedActionList() {
             console.log("expandedActionList called");
         },
-
         actionClickedActionList() {
             console.log("action-clicked called");
         }
     },
-  }
-  </script>
+}
+</script>
   
-  <style>
-  
-  </style>
+<style scoped>
+.actions-list-container {
+    width: 100%;
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    .actions-list-container {
+        padding: 8px;
+    }
+}
+</style>
   

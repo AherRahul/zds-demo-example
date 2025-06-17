@@ -1,8 +1,7 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid class="empty-state-border">
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
                     <zds-page-header
                         title="Procedures"
                         subtitle="Create dashboards and associate them with services. To access the panels externally, go to https://rahulaher.netlify.app and enter the corresponding key."
@@ -24,8 +23,7 @@
                             />
                         </template>
                     </zds-page-header>
-                </zds-col>
-            </zds-row>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

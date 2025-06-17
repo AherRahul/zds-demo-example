@@ -1,17 +1,16 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-link
-                        :href="href"
-                        :newTab="newTab"
-                        :text="text"
-                        :size="size"
-                        :bold="bold"
-                    />
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-link
+                    :href="href"
+                    :variant="variant"
+                    :target="target"
+                    :disabled="disabled"
+                >
+                    <slot></slot>
+                </zds-link>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

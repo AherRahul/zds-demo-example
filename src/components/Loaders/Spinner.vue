@@ -1,15 +1,13 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-spinner
-                        :variant="variant"
-                        :size="size"
-                        :delay="delay"
-                    />
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-spinner
+                    :size="size"
+                    :variant="variant"
+                    :thickness="thickness"
+                />
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

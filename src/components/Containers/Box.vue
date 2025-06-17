@@ -1,25 +1,23 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-box
-                        :elevated="elevated"
-                        :padding="padding"
-                        :fluid="fluid"
-                        :variant="variant"
-                        :clickable="clickable"
-                    >
-                        2
-                    </zds-box>
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-box
+                    :elevated="elevated"
+                    :padding="padding"
+                    :fluid="fluid"
+                    :variant="variant"
+                    :clickable="clickable"
+                >
+                    2
+                </zds-box>
+            </zds-grid-item>
         </zds-grid>
     </div>
-  </template>
-  
-  <script>
-  export default {
+</template>
+
+<script>
+export default {
     name: 'Box',
     props: {
         /**
@@ -66,10 +64,10 @@
     },
     mounted () {},
     methods: {},
-  }
-  </script>
+}
+</script>
+
+<style>
   
-  <style>
-  
-  </style>
+</style>
   

@@ -1,11 +1,15 @@
 <template>
     <div>
-        <zds-bar-chart
-            :data="chartData"
-            :variant="variant"
-            :labels="chartLabels"
-            :bar-width="barWidth"
-        />
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-bar-chart
+                    :data="chartData"
+                    :variant="variant"
+                    :labels="chartLabels"
+                    :bar-width="barWidth"
+                />
+            </zds-grid-item>
+        </zds-grid>
     </div>
   </template>
   

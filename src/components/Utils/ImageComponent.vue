@@ -1,8 +1,7 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
                     <zds-image
                         :width="width"
                         :blackAndWhite="blackAndWhite"
@@ -13,8 +12,7 @@
                         :fallbackSrc="fallbackSrc"
                         :alt="alt"
                     />
-                </zds-col>
-            </zds-row>
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

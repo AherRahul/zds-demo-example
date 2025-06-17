@@ -1,17 +1,15 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-pagination
-                        v-model="page"
-                        value="1"
-                        perPage="10"
-                        total="60"
-                        :fluid="true"
-                    />
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-pagination
+                    v-model="page"
+                    value="1"
+                    perPage="10"
+                    total="60"
+                    :fluid="true"
+                />
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>

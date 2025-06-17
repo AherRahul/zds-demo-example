@@ -1,14 +1,14 @@
 <template>
     <div style="padding: 5px">
-        <zds-grid>
-            <zds-row>
-                <zds-col  cols="12" offset="0" colsAtS="12" colsAtM="12" colsAtL="12" colsAtXl="12">
-                    <zds-skeleton-text
-                        :width="width"
-                        :height="height"
-                    />
-                </zds-col>
-            </zds-row>
+        <zds-grid cols="minmax(auto,100%) 1fr" gap="20px">
+            <zds-grid-item>
+                <zds-skeleton-text
+                    :lines="lines"
+                    :width="width"
+                    :height="height"
+                    :variant="variant"
+                />
+            </zds-grid-item>
         </zds-grid>
     </div>
   </template>
@@ -32,7 +32,23 @@
 			type: String,
 			required: false,
 			default: '25',
-		}
+		},
+        /**
+         * Number of lines
+         */
+        lines: {
+            type: Number,
+            required: false,
+            default: 1
+        },
+        /**
+         * Variant of the skeleton text
+         */
+        variant: {
+            type: String,
+            required: false,
+            default: 'default'
+        }
     },
     data() {
         return {}
